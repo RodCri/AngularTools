@@ -4,11 +4,15 @@ import { BrowserModule } from '@angular/platform-browser';
 import { AppRoutingModule } from './app-routing.module';
 import { AppComponent } from './app.component';
 import { CardComponent } from './components/card/card.component';
-import { FormsModule } from '@angular/forms';
+import { FormsModule, ReactiveFormsModule } from '@angular/forms';
 import { ButtonComponent } from './components/button/button.component';
 import { FormUserComponent } from './components/form-user/form-user.component';
 import { CurrencyPipe } from './pipes/currency.pipe';
 import { FilterPipe } from './pipes/filter.pipe';
+import { ContactComponent } from './components/contact/contact.component';
+import { RegisterComponent } from './components/register/register.component';
+import { HomeComponent } from './components/home/home.component';
+import { NavbarComponent } from './components/navbar/navbar.component';
 
 @NgModule({
   declarations: [
@@ -17,12 +21,17 @@ import { FilterPipe } from './pipes/filter.pipe';
     ButtonComponent,
     FormUserComponent,
     CurrencyPipe,
-    FilterPipe
+    FilterPipe,
+    ContactComponent,
+    RegisterComponent,
+    HomeComponent,
+    NavbarComponent
   ],
   imports: [
     BrowserModule,
     AppRoutingModule,
-    FormsModule
+    FormsModule,
+    ReactiveFormsModule
   ],
   providers: [],
   bootstrap: [AppComponent]

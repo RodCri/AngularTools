@@ -1,0 +1,31 @@
+<pre>{{contactForm.value | json}}</pre>
+<h2>Template Driven form Contact Form</h2>
+<form (ngSubmit)="onSubmit(contactForm)" #contactForm="ngForm">
+  <div class="mb-4">
+    <label for="name" class="from-label">Name</label>
+    <input type="text" id="name" class="form-control" name="name" [(ngModel)]="model.name" required #name="ngModel">
+    <div [hidden]="name.valid || name.pristine" class="alert alert-danger">This field is required.</div>
+  </div>
+  <div class="mb-4">
+    <label for="email" class="from-label">Email</label>
+    <input type="text" id="email" class="form-control" name="email" [(ngModel)]="model.email" required #email="ngModel">
+    <div [hidden]="email.valid || email.pristine" class="alert alert-danger">This field is required.</div>
+  </div>
+  <div class="mb-4 form-check">
+    <label for="checkAdult" class="from-label">Are you over 18 years</label>
+    <input type="checkbox" id="checkAdult" class="form-check-input" name="checkAdult" [(ngModel)]="model.checkAdult"
+      required>
+  </div>
+  <div class="mb-4">
+    <label for="department" class="from-label">Department</label>
+    <select id="department" name="department" class="form-select form-select-sm" [(ngModel)]="model.department" required
+      #department="ngModel">
+      <option value="Marketing">Marketing</option>
+      <option value="Sales">Sales</option>
+      <option value="Other">Other</option>
+    </select>
+  </div>
+  <div class="">
+    <button [disabled]="contactForm.invalid" type="submit" class="btn btn-info">Enviar</button>
+  </div>
+</form>
