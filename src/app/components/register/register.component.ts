@@ -1,5 +1,6 @@
 import { Component } from '@angular/core';
 import { FormBuilder, FormControl, FormGroup, Validators } from '@angular/forms';
+import { ActivatedRoute, Params } from '@angular/router';
 
 @Component({
   selector: 'app-register',
@@ -10,13 +11,20 @@ export class RegisterComponent {
 
   registerForm!: FormGroup;
   myField = new FormControl();
+  name!: string;
 
-  constructor(private readonly fv: FormBuilder){
-    
-  }
+  constructor(
+    private readonly fv: FormBuilder,
+    private readonly route: ActivatedRoute
+  ){  }
 
   ngOnInit(): void {
     this.registerForm = this.initForm();
+    this.route.queryParams.subscribe(
+      (params: Params) => {
+        this.name = params['name'];
+      }
+    )
   }
 
   onSubmit():void{

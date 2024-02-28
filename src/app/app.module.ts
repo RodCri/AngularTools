@@ -13,6 +13,10 @@ import { ContactComponent } from './components/contact/contact.component';
 import { RegisterComponent } from './components/register/register.component';
 import { HomeComponent } from './components/home/home.component';
 import { NavbarComponent } from './components/navbar/navbar.component';
+import { PagenotfoudComponent } from './components/pagenotfoud/pagenotfoud.component';
+import { UserComponent } from './components/users/user/user.component';
+import { ListComponent } from './components/users/list/list.component';
+import { DetailComponent } from './components/users/detail/detail.component';
 
 @NgModule({
   declarations: [
@@ -25,7 +29,11 @@ import { NavbarComponent } from './components/navbar/navbar.component';
     ContactComponent,
     RegisterComponent,
     HomeComponent,
-    NavbarComponent
+    NavbarComponent,
+    PagenotfoudComponent,
+    UserComponent,
+    ListComponent,
+    DetailComponent
   ],
   imports: [
     BrowserModule,
